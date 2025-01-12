@@ -20,7 +20,7 @@ for job_dir in "$JENKINS_HOME/jobs/"*/; do
 	job_name=$(basename "$job_dir")
 
 	# Get build number and log file path 
-	for build_dir in "$job_dir/builds/"*/"; do 
+	for build_dir in "$job_dir/builds/"*/; do 
 		build_number=$(basename "$build_dir")
 		log_file="$build_dir/log"
 		if [ -f "$log_file" ] && [ "$(date -r "$log_file" +%Y-%m-%d)" == "$DATE" ]; then
